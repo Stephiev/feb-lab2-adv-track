@@ -157,13 +157,19 @@ SentientBeing.prototype.sayHello = sayHello;
 
 // Subclass means it has to inherit from
 // SentientBeing
-function Human() {}
+function Human() {
+  this.being = "Human";
+}
 Human.prototype = new SentientBeing("Earth", "federation standard");
 
-function Romulan() {}
+function Romulan() {
+  this.being = "Romulan";
+}
 Romulan.prototype = new SentientBeing("Romulus", "romulan");
 
-function Klingon() {}
+function Klingon() {
+  this.being = "Klingon";
+}
 Klingon.prototype = new SentientBeing("Qo\"noS", "klingon");
 
 assert((new Human()).sayHello(new Klingon()) === "nuqneH",
